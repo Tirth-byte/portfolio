@@ -47,7 +47,11 @@
   cells.forEach(function (p) { p.ord = p.x + p.y; });
   var maxOrd = 0; cells.forEach(function (p) { maxOrd = Math.max(maxOrd, p.ord); });
 
-  var VOX_TOP = "#D8D4CC", VOX_MID = "#B7B2A7", VOX_LOW = "#8E887B", SIGNAL = "#E0A62E", PAPER = "#EFEEE8";
+  // The wordmark is rendered in INK, not gold: near-black front face, warmer-dark
+  // top face, darkest right face, with a faint warm rim (not the accent) so the
+  // cubes still read as catching a little light. Keeping gold off the name lets
+  // the accent stay meaningful everywhere else on the page.
+  var VOX_TOP = "#1A1918", VOX_MID = "#312E28", VOX_LOW = "#0E0D0B", SIGNAL = "#4A463D", PAPER = "#EFEEE8";
   var dpr = Math.max(1, Math.min(window.devicePixelRatio || 1, 2));
   var cell = 0, ox = 0, oy = 0, depth = 0;
 

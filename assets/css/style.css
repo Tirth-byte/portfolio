@@ -212,7 +212,6 @@ a.block:hover .gomore .arw{transform:translateX(4px)}
 .skillrow .k{font-family:var(--fmono);font-size:.75rem;letter-spacing:.05em;text-transform:uppercase;color:var(--mute);margin-bottom:.7rem}
 .skillrow .v{display:flex;flex-wrap:wrap;gap:.5rem}
 .skillrow .v span{font-size:.95rem;font-weight:500;border-bottom:2px solid var(--vox-mid);padding-bottom:1px}
-.skillrow.ship .v span{border-bottom-color:var(--signal)}
 .skillnote{font-size:1.0625rem;line-height:1.5;color:var(--mute);max-width:60ch}
 .skillnote b{color:var(--ink);font-weight:600}
 
@@ -229,8 +228,20 @@ a.block:hover .gomore .arw{transform:translateX(4px)}
 .pr-chip:hover{color:var(--ink);border-color:var(--signal)}
 
 .pr-out{border:1.5px solid var(--ink);border-top:3px solid var(--signal);background:var(--paper);padding:clamp(1rem,3vw,1.5rem);min-height:6.5rem}
-.pr-msg{color:var(--mute);font-size:1rem;line-height:1.5}
-.pr-msg code{font-family:var(--fmono);font-size:.85em;background:var(--paper-2);padding:.1em .35em;border:1px solid var(--line)}
+/* status / error states — each is a distinct, visible box */
+.pr-msg{border:1.5px solid var(--line);border-left-width:3px;border-left-color:var(--mute);padding:.85rem 1.05rem;background:var(--paper)}
+.pr-msg__label{font-family:var(--fmono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);margin-bottom:.4rem}
+.pr-msg__body{font-size:1rem;line-height:1.5;color:var(--ink)}
+.pr-msg__body code{font-family:var(--fmono);font-size:.85em;background:var(--paper-2);padding:.1em .35em;border:1px solid var(--line)}
+.pr-msg--rate,.pr-msg--malformed{border-left-color:var(--signal)}
+.pr-msg--rate .pr-msg__label,.pr-msg--malformed .pr-msg__label{color:#8A6410}
+.pr-msg--notfound,.pr-msg--network,.pr-msg--timeout{border-left-color:var(--live-ink)}
+.pr-msg--notfound .pr-msg__label,.pr-msg--network .pr-msg__label,.pr-msg--timeout .pr-msg__label{color:var(--live-ink)}
+.pr-msg--wait .dots::after{content:"\2026";margin-left:.1em}
+@media (prefers-reduced-motion:no-preference){.pr-msg--wait .dots{animation:prqpulse 1s ease-in-out infinite}}
+@keyframes prqpulse{0%,100%{opacity:.3}50%{opacity:1}}
+/* cached-fallback badge (examples never fail) */
+.pr-cachebadge{font-family:var(--fmono);font-size:.66rem;letter-spacing:.05em;text-transform:uppercase;color:#8A6410;border:1px solid var(--signal);border-left-width:3px;padding:.45rem .7rem;margin-bottom:1rem;background:color-mix(in srgb,var(--signal) 9%,var(--paper))}
 .pr-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:.6rem .9rem}
 .pr-state{font-family:var(--fmono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;padding:.2rem .45rem;border:1px solid var(--line);color:var(--mute)}
 .pr-state-open{color:var(--ink);border-color:var(--ink)}
@@ -303,15 +314,13 @@ a.block:hover .gomore .arw{transform:translateX(4px)}
 .narr p{font-size:1.0625rem;line-height:1.55;max-width:60ch}
 .narr p + p{margin-top:.9rem}
 .narr p b{font-weight:600}
-/* case-study contrast: rejected path vs the one taken */
-.narr .constraint{background:var(--paper-2);border:1.5px solid var(--line);padding:1rem 1.15rem;font-size:1rem;max-width:none}
-.narr section.rejected,.narr section.took{padding-left:1.1rem;border-left:3px solid var(--vox-mid)}
-.narr section.rejected p{color:var(--mute)}
-.narr section.rejected .k::after{content:" · not this";color:var(--mute);opacity:.7}
-.narr section.took{border-left-color:var(--signal)}
-.narr section.took .k{color:var(--ink)}
-.narr .quote{border-left:3px solid var(--signal);padding-left:1.1rem;margin-top:1.5rem;font-family:var(--fdisplay);font-weight:500;font-size:1.25rem;line-height:1.3;letter-spacing:-.01em}
-.narr .quote cite{display:block;font-family:var(--fmono);font-size:.72rem;letter-spacing:.04em;color:var(--mute);text-transform:uppercase;font-style:normal;margin-top:.8rem}
+/* problem statement reads as the page's lede */
+.narr section > h2{font-family:var(--fdisplay);font-weight:700;font-size:clamp(1.5rem,1.2rem + 1.3vw,2rem);line-height:1.08;letter-spacing:-.015em;max-width:24ch}
+/* the hardest decision — the section that matters most (gold = the one to read) */
+.narr section.hardest{border-left:3px solid var(--signal);padding-left:1.1rem}
+/* security patch — its own flagged section */
+.narr section.secpatch{border-left:3px solid var(--live-ink);padding-left:1.1rem}
+.narr section.secpatch .k{color:var(--live-ink)}
 
 .spec{align-self:start;position:sticky;top:72px;border:1.5px solid var(--ink);border-top:3px solid var(--signal)}
 .spec .h{font-family:var(--fmono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);padding:.9rem 1.1rem;border-bottom:1px solid var(--line)}
@@ -322,15 +331,29 @@ a.block:hover .gomore .arw{transform:translateX(4px)}
 .spec .links{padding:.9rem 1.1rem 1.1rem;display:grid;gap:.55rem}
 .spec .links a{display:flex;align-items:center;gap:.55rem;font-weight:600;font-size:.95rem}
 .spec .links a:hover{color:var(--ink)}
-.spec .links a .arw{color:var(--signal);transition:transform .16s ease}
+.spec .links a .arw{color:var(--mute);transition:transform .16s ease,color .16s ease}
+.spec .links a:hover .arw{color:var(--ink)}
 .spec .links a:hover .arw{transform:translate(2px,-2px)}
+/* stack block inside the spec sheet */
+.spec .spec-stack{padding:.9rem 1.1rem 1.1rem;border-top:1px solid var(--line-faint)}
+.spec .spec-stack .k{font-family:var(--fmono);font-size:.7rem;letter-spacing:.04em;text-transform:uppercase;color:var(--mute);margin-bottom:.6rem}
+.spec .spec-stack .stack{margin:0}
+/* non-live pages: status without the record dot */
+.topbar .status.nolink{color:var(--mute)}
 
-.projnext{border-top:1px solid var(--ink);margin-top:clamp(2.5rem,6vw,4rem)}
-.projnext a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:clamp(1.5rem,4vw,2.25rem) 0}
-.projnext .k{font-family:var(--fmono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
-.projnext .t{font-family:var(--fdisplay);font-weight:700;font-size:clamp(1.4rem,1.1rem + 1.4vw,2rem);letter-spacing:-.015em;margin-top:.4rem}
-.projnext .arw{font-size:1.6rem;transition:transform .18s ease}
-.projnext a:hover .arw{transform:translateX(6px)}
+/* prev / next pager — label sits above title (block flow, never inline-collides) */
+.pager{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink);margin-top:clamp(2.5rem,6vw,4rem)}
+.pager a{padding:clamp(1.5rem,4vw,2.25rem) clamp(1rem,3vw,2rem);min-width:0}
+.pager a.prev{padding-left:0;border-right:1px solid var(--line)}
+.pager a.next{padding-right:0;text-align:right}
+.pager .k{font-family:var(--fmono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute)}
+.pager .t{display:inline-block;font-family:var(--fdisplay);font-weight:700;font-size:clamp(1.15rem,1rem + .9vw,1.55rem);letter-spacing:-.015em;line-height:1.08;margin-top:.55rem;color:var(--ink);box-shadow:inset 0 -2px 0 transparent;transition:box-shadow .15s ease}
+.pager a:hover .t{box-shadow:inset 0 -2px 0 var(--signal)}
+@media (max-width:640px){
+  .pager{grid-template-columns:1fr}
+  .pager a.prev{border-right:0;border-bottom:1px solid var(--line);padding:clamp(1.25rem,4vw,1.75rem) 0}
+  .pager a.next{text-align:left;padding:clamp(1.25rem,4vw,1.75rem) 0}
+}
 
 /* ---------- motion floor ---------- */
 @media (prefers-reduced-motion:reduce){

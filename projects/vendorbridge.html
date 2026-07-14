@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VendorBridge — procurement ERP built in 8 hours · Tirth Patel</title>
+<meta name="description" content="A full procurement system — quote to purchase order to invoice — built solo in 8 hours. Next.js, Firestore, Tailwind, Recharts.">
+<meta name="theme-color" content="#EFEEE8">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://tirth-byte.github.io/portfolio/projects/vendorbridge.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="VendorBridge · Tirth Patel">
+<meta property="og:description" content="A full procurement ERP built solo in 8 hours: quote → purchase order → invoice, ₹1.6+ Cr of seeded data.">
+<meta property="og:url" content="https://tirth-byte.github.io/portfolio/projects/vendorbridge.html">
+<meta property="og:site_name" content="Tirth Patel">
+<meta property="og:image" content="https://tirth-byte.github.io/portfolio/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tirth-byte.github.io/portfolio/assets/og.png">
+<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+<link rel="preload" href="../assets/fonts/general-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cabinet-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <span class="mono coord">x:04 y:00</span>
+    <span class="who"><b>tirth patel</b> / vendorbridge</span>
+    <span class="status nolink">complete · hackathon</span>
+  </div>
+</header>
+
+<main id="main" class="wrap projtop">
+
+  <a class="backlink" href="../index.html"><span aria-hidden="true">&larr;</span> back to the build sheet</a>
+
+  <div class="projhead">
+    <span class="n">04 · Selected work</span>
+    <h1>VendorBridge</h1>
+    <p class="one">A full procurement ERP — request quotes from vendors, compare them, auto-generate the purchase order, email the invoice, and watch it on a dashboard.</p>
+  </div>
+
+  <div class="projgrid">
+    <div class="narr">
+      <section>
+        <div class="k">The problem</div>
+        <h2>Small businesses run procurement in WhatsApp and Excel. Nothing connects the quote to the purchase order to the invoice.</h2>
+      </section>
+      <section>
+        <div class="k">What I built</div>
+        <p>A full procurement system: request quotes from vendors, compare them, auto-generate the purchase order, email the invoice, and watch the whole thing on a dashboard. Built solo in 8 hours at the Odoo × KSV Hackathon 2026.</p>
+      </section>
+      <section class="hardest">
+        <div class="k">The hardest decision</div>
+        <p>Enforcing 4-tier role access (Admin, Manager, Procurement Officer, Vendor) in <b>both</b> Firestore security rules and middleware. Middleware alone only hides the UI; the database still answers to anyone who knows the endpoint.</p>
+      </section>
+      <section>
+        <div class="k">The outcome</div>
+        <p>A complete lifecycle in 8 hours, seeded with 12 months of realistic data: 15 vendors, 12 RFQs, 30+ quotations, and 10 POs totalling <b>₹1.6+ Cr</b>, with auto-numbered POs (PO-2026-XXXX).</p>
+      </section>
+    </div>
+
+    <aside class="spec" aria-label="Project specification">
+      <div class="h">Spec</div>
+      <dl>
+        <div class="r"><dt>Role</dt><dd>Solo · 8-hour build</dd></div>
+        <div class="r"><dt>Status</dt><dd>Complete · hackathon</dd></div>
+      </dl>
+      <div class="spec-stack"><div class="k">Stack</div><ul class="stack" aria-label="stack"><li>Next.js</li><li>Firebase / Firestore</li><li>Tailwind</li><li>Recharts</li></ul></div>
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label="Project navigation">
+    <a class="prev" href="xinity.html"><div class="k">&larr; Prev · 03</div><div class="t">Xinity outreach system</div></a>
+    <a class="next" href="skillmatch.html"><div class="k">Next · 05 &rarr;</div><div class="t">SkillMatch</div></a>
+  </nav>
+
+</main>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

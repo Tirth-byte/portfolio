@@ -22,6 +22,28 @@
 <meta name="twitter:title" content="Tirth Patel — AI product engineer">
 <meta name="twitter:description" content="Voxel Air, Qeist, and a national hackathon podium. Everything on the page is live.">
 <meta name="twitter:image" content="https://tirth-byte.github.io/portfolio/assets/og.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Tirth Patel",
+  "jobTitle": "AI product engineer",
+  "url": "https://tirth-byte.github.io/portfolio/",
+  "image": "https://tirth-byte.github.io/portfolio/assets/og.png",
+  "email": "kavartirth9@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Morbi",
+    "addressRegion": "Gujarat",
+    "addressCountry": "IN"
+  },
+  "sameAs": [
+    "https://github.com/Tirth-byte",
+    "https://www.linkedin.com/in/tirth-patel-b70312373",
+    "https://qeist.in"
+  ]
+}
+</script>
 <script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
 <link rel="preload" href="assets/fonts/general-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/cabinet-800.woff2" as="font" type="font/woff2" crossorigin>
@@ -43,8 +65,7 @@
   <section class="hero wrap">
     <p class="kicker mono">Morbi, Gujarat · IST</p>
 
-    <h1 class="wordmark">
-      <span class="vh">Tirth Patel</span>
+    <h1 class="wordmark" aria-label="Tirth Patel">
       <canvas id="wordmark" aria-hidden="true"></canvas>
       <span class="fallback name-fallback" aria-hidden="true" data-mode="static">Tirth<br>Patel</span>
     </h1>
@@ -93,7 +114,7 @@
 
         <article class="block">
           <div class="idx"><span class="n">02 · Qeist</span></div>
-          <h3><a class="link-stretch" href="https://qeist.in" target="_blank" rel="noopener">Qeist</a></h3>
+          <h3><a class="link-stretch" href="projects/qeist.html">Qeist</a></h3>
           <p class="sub">An AI QA engineer for GitHub pull requests — it reads the code changes in a PR and generates the QA checklist, so nobody writes test cases by hand.</p>
           <p class="outcome"><span class="big">10 QA engineers interviewed</span> Every one said they&rsquo;d use it. Building v2 on what they told me was missing.</p>
           <blockquote class="qquote">
@@ -105,7 +126,7 @@
 
         <article class="block">
           <div class="idx"><span class="n">03 · Xinity outreach</span></div>
-          <h3>Xinity outreach system</h3>
+          <h3><a class="link-stretch" href="projects/xinity.html">Xinity outreach system</a></h3>
           <p class="sub">The system that fills Xinity&rsquo;s hackathons, plus the Firebase platform that runs them — registration, team coordination, live dashboard.</p>
           <p class="outcome"><span class="big">10k+ emails · 1.2k+ WhatsApp · &#8377;0</span> Delivered without a paid service. Platform ran 3+ events including Biothon 2026, 200+ participants.</p>
           <p class="decision">Instead of a bulk sender, I built the send system myself: one draft composed once, delivered in small batches from real accounts, so no recipient list ever looked like a campaign.</p>
@@ -125,7 +146,7 @@
 
         <article class="block">
           <div class="idx"><span class="n">04 · VendorBridge</span></div>
-          <h3>VendorBridge</h3>
+          <h3><a class="link-stretch" href="projects/vendorbridge.html">VendorBridge</a></h3>
           <p class="sub">A full procurement ERP — request quotes, compare them, auto-generate the purchase order, email the invoice, watch it on a dashboard.</p>
           <p class="outcome"><span class="big">Built solo in 8 hours</span> Complete lifecycle. Seeded with 12 months of realistic data: 15 vendors, 30+ quotations, 10 POs totalling &#8377;1.6+ Cr. Odoo &times; KSV Hackathon 2026.</p>
           <p class="decision">Enforced 4-tier role access in <b>both</b> Firestore rules and middleware — middleware alone only hides the UI; the database still answers to anyone who knows the endpoint.</p>
@@ -134,7 +155,7 @@
 
         <article class="block">
           <div class="idx"><span class="n">05 · SkillMatch</span></div>
-          <h3>SkillMatch</h3>
+          <h3><a class="link-stretch" href="projects/skillmatch.html">SkillMatch</a></h3>
           <p class="sub">A matching engine connecting people to internships, jobs and hackathons based on what they could grow into, not just what&rsquo;s already on their CV.</p>
           <p class="outcome"><span class="big">3rd place, national</span> Out of hundreds of teams — CodeVersity @ IIT Gandhinagar.</p>
           <p class="decision">Every job board filters on current qualifications, which locks beginners out of roles they&rsquo;d be good at. SkillMatch filters on trajectory instead.</p>
@@ -167,7 +188,7 @@
         <button type="button" class="pr-chip" data-pr="Tirth-byte/testing-testosa#5">API rate-limit</button>
       </div>
 
-      <div id="pr-out" class="pr-out" aria-live="polite"><p class="pr-msg">Press <b>Read PR</b> — it calls api.github.com from your browser and reports the real change surface. Works on any public PR.</p></div>
+      <div id="pr-out" class="pr-out" aria-live="polite"><div class="pr-msg pr-msg--idle" role="status"><div class="pr-msg__label">Ready</div><div class="pr-msg__body">Press <b>Read PR</b> — it calls api.github.com from your browser and reports the real change surface. Works on any public PR; the three examples are cached and work offline.</div></div></div>
     </div>
   </section>
 
@@ -238,6 +259,7 @@
     <a class="big" href="mailto:kavartirth9@gmail.com">Email <span class="arw" aria-hidden="true">→</span></a>
     <a class="big" href="https://github.com/Tirth-byte" target="_blank" rel="noopener">GitHub <span class="arw" aria-hidden="true">↗</span></a>
     <a class="big" href="https://www.linkedin.com/in/tirth-patel-b70312373" target="_blank" rel="noopener">LinkedIn <span class="arw" aria-hidden="true">↗</span></a>
+    <a class="big" href="assets/tirth-patel-resume.pdf" target="_blank" rel="noopener">Résumé <span class="arw" aria-hidden="true">↓</span></a>
     <a class="big" href="https://qeist.in" target="_blank" rel="noopener">qeist.in <span class="arw" aria-hidden="true">↗</span></a>
   </div>
   <div class="meta">
@@ -247,6 +269,7 @@
 </footer>
 
 <script src="assets/js/wordmark.js" defer></script>
+<script src="assets/js/pr-cache.js" defer></script>
 <script src="assets/js/prq.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Xinity outreach system · Tirth Patel</title>
+<meta name="description" content="10,000+ emails and 1,200+ WhatsApp messages delivered with ₹0 spent, plus the Firebase platform that ran 3+ hackathons.">
+<meta name="theme-color" content="#EFEEE8">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://tirth-byte.github.io/portfolio/projects/xinity.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Xinity outreach system · Tirth Patel">
+<meta property="og:description" content="10,000+ emails and 1,200+ WhatsApp messages, ₹0 spent — and a Firebase platform running 3+ hackathons.">
+<meta property="og:url" content="https://tirth-byte.github.io/portfolio/projects/xinity.html">
+<meta property="og:site_name" content="Tirth Patel">
+<meta property="og:image" content="https://tirth-byte.github.io/portfolio/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tirth-byte.github.io/portfolio/assets/og.png">
+<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+<link rel="preload" href="../assets/fonts/general-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cabinet-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <span class="mono coord">x:03 y:00</span>
+    <span class="who"><b>tirth patel</b> / xinity</span>
+    <span class="status nolink">in production · 3+ events</span>
+  </div>
+</header>
+
+<main id="main" class="wrap projtop">
+
+  <a class="backlink" href="../index.html"><span aria-hidden="true">&larr;</span> back to the build sheet</a>
+
+  <div class="projhead">
+    <span class="n">03 · Selected work</span>
+    <h1>Xinity outreach system</h1>
+    <p class="one">The system that fills Xinity's hackathons, plus the Firebase platform that runs them — registration, team coordination, live dashboard.</p>
+  </div>
+
+  <div class="projgrid">
+    <div class="narr">
+      <section>
+        <div class="k">The problem</div>
+        <h2>Xinity needed to fill three hackathons and had no budget for outreach tooling.</h2>
+      </section>
+      <section>
+        <div class="k">What I built</div>
+        <p>The send system that fills the hackathons, plus the Firebase platform that runs them — registration, team coordination, and a live dashboard. Built solo as a summer intern; promoted to Head of Technical Department in two months.</p>
+      </section>
+      <section class="hardest">
+        <div class="k">The hardest decision</div>
+        <p>Instead of paying for a mail service, I built the send system myself. Contacts import from a spreadsheet, one draft is composed once, then delivered in small batches from real accounts rather than blasted from a single bulk sender — so no recipient list ever looked like a campaign. For WhatsApp I split the message queue across the team, so every message went out from a real person's account instead of an API.</p>
+      </section>
+      <section class="secpatch">
+        <div class="k">Security patch</div>
+        <p>Found an <b>unauthenticated Firebase API endpoint exposing full event data</b> — every registrant, every team. Patched it independently, within hours, with Firestore security rules. Nobody expects a first-year student to find this; finding it is the point.</p>
+      </section>
+      <section>
+        <div class="k">The outcome</div>
+        <p><b>10,000+ emails</b> and <b>1,200+ WhatsApp messages</b> delivered without a paid service — ₹0 spent. The platform ran 3+ events including Biothon 2026, 200+ participants.</p>
+      </section>
+    </div>
+
+    <aside class="spec" aria-label="Project specification">
+      <div class="h">Spec</div>
+      <dl>
+        <div class="r"><dt>Role</dt><dd>Solo · summer intern</dd></div>
+        <div class="r"><dt>Status</dt><dd>In production · 3+ events</dd></div>
+      </dl>
+      <div class="spec-stack"><div class="k">Stack</div><ul class="stack" aria-label="stack"><li>Python</li><li>Firebase</li><li>Spreadsheet ingest</li></ul></div>
+    </aside>
+  </div>
+
+  <nav class="pager" aria-label="Project navigation">
+    <a class="prev" href="qeist.html"><div class="k">&larr; Prev · 02</div><div class="t">Qeist</div></a>
+    <a class="next" href="vendorbridge.html"><div class="k">Next · 04 &rarr;</div><div class="t">VendorBridge</div></a>
+  </nav>
+
+</main>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>
