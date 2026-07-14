@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" class="js">
+<head>
+<meta charset="utf-8">
+<title>OG</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  html,body{margin:0}
+  body{width:1200px;height:630px;overflow:hidden;background-size:48px 48px}
+  .og{width:1200px;height:630px;box-sizing:border-box;padding:64px 84px;display:flex;flex-direction:column;justify-content:space-between;position:relative}
+  .og .kick{color:var(--mute);font-size:20px}
+  .og .wordmark{width:620px;max-width:none;aspect-ratio:56/25;margin:10px 0 0}
+  .og .pitch{font-family:var(--fdisplay);font-weight:500;font-size:40px;line-height:1.1;letter-spacing:-.012em;max-width:22ch;color:var(--ink);margin:0}
+  .og .foot{display:flex;align-items:center;justify-content:space-between}
+  .og .foot .live{display:inline-flex;align-items:center;gap:12px;font-family:var(--fmono);font-size:18px;letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+  .og .foot .live .dot{width:12px;height:12px;border-radius:50%;background:var(--live);box-shadow:0 0 0 4px color-mix(in srgb,var(--live) 22%,transparent)}
+  .og .foot .url{font-family:var(--fmono);font-size:18px;letter-spacing:.03em;color:var(--mute)}
+  .og .edge{position:absolute;left:0;top:0;bottom:0;width:10px;background:var(--signal)}
+</style>
+</head>
+<body>
+  <div class="og">
+    <span class="edge" aria-hidden="true"></span>
+    <div>
+      <p class="kick mono">AI PRODUCT ENGINEER · MORBI, IST</p>
+      <div class="wordmark">
+        <canvas id="wordmark" aria-hidden="true"></canvas>
+      </div>
+    </div>
+    <p class="pitch">I build AI tools that do one specific person&rsquo;s job better.</p>
+    <div class="foot">
+      <span class="live"><span class="dot"></span>Voxel Air · Qeist · everything live</span>
+      <span class="url">tirth-byte.github.io</span>
+    </div>
+  </div>
+  <script src="assets/js/wordmark.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voxel Air — gesture-controlled 3D editor · Tirth Patel</title>
+<meta name="description" content="A 3D voxel editor you control with your hands in front of your webcam. Runs entirely in the browser — no install, no backend. Three.js, WebGL, MediaPipe.">
+<meta name="theme-color" content="#EFEEE8">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://tirth-byte.github.io/portfolio/projects/voxel-air.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Voxel Air — gesture-controlled 3D editor">
+<meta property="og:description" content="3D modelling tools assume a mouse and a manual. This one assumes hands. Deployed, in use, all client-side.">
+<meta property="og:url" content="https://tirth-byte.github.io/portfolio/projects/voxel-air.html">
+<meta property="og:site_name" content="Tirth Patel">
+<meta property="og:image" content="https://tirth-byte.github.io/portfolio/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tirth Patel — AI product engineer. Voxel Air, Qeist, everything live.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tirth-byte.github.io/portfolio/assets/og.png">
+<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+<link rel="preload" href="../assets/fonts/general-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/cabinet-700.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <span class="mono coord">x:01 y:00</span>
+    <span class="who"><b>tirth patel</b> / voxel air</span>
+    <a class="status" href="https://tirth-byte.github.io/Voxel-Air/" target="_blank" rel="noopener"><span class="dot" aria-hidden="true"></span>live · in use</a>
+  </div>
+</header>
+
+<main id="main" class="wrap projtop">
+
+  <a class="backlink" href="../index.html"><span aria-hidden="true">&larr;</span> back to the build sheet</a>
+
+  <div class="projhead">
+    <span class="n">01 · Selected work</span>
+    <h1>Voxel Air</h1>
+    <p class="one">A 3D voxel editor you control with your hands in front of your webcam. It assumes hands, not a mouse and a manual.</p>
+  </div>
+
+  <!-- LIVE band: an honest, load-on-click embed of the real deployed app -->
+  <div class="liveband inset on-dark" data-embed="https://tirth-byte.github.io/Voxel-Air/">
+    <div class="l">
+      <div class="k"><span class="dot" aria-hidden="true"></span>Live · runs in this browser</div>
+      <p>Raise a hand at your webcam and move a voxel — right here.</p>
+    </div>
+    <button class="btn invert" type="button" data-embed-launch>Launch the editor <span class="arw" aria-hidden="true">→</span></button>
+  </div>
+  <p class="hint" style="margin-top:.75rem">Loads the real app only when you ask. Prefer a new tab? <a class="link" href="https://tirth-byte.github.io/Voxel-Air/" target="_blank" rel="noopener">Open Voxel Air&nbsp;↗</a></p>
+
+  <div class="projgrid">
+
+    <div class="narr">
+      <section>
+        <div class="k">The problem</div>
+        <h2>3D modelling tools assume a mouse and a manual. This one assumes hands.</h2>
+        <p>Every 3D editor expects a mouse, a menu, and a manual to learn them. Voxel Air removes that convention: a stranger opens the page, raises a hand at the webcam, and starts building — no install, no account, no manual.</p>
+      </section>
+
+      <section>
+        <div class="k">The constraint</div>
+        <p class="constraint">It had to stay <b>free to run, private by default, and deployable as static files</b> — while working on whatever webcam a stranger happens to have. No controlled lighting. No known hardware.</p>
+      </section>
+
+      <section class="rejected">
+        <div class="k">The approach I rejected</div>
+        <p>Stream the webcam frames to a server and run hand-tracking there. It&rsquo;s the easier build — heavier models, compute you control — but it breaks all three constraints at once: a backend to pay for and keep alive, a stranger&rsquo;s camera frames leaving their machine, and the end of one-click static deploy.</p>
+      </section>
+
+      <section class="took">
+        <div class="k">The approach I took</div>
+        <p>Do <b>all hand-tracking client-side with MediaPipe</b>, render the voxels with Three.js and WebGL, in vanilla JavaScript. Fully static — zero backend, private by default, instant deploy.</p>
+        <p>The whole cost of that choice lands on gesture detection: it has to stay stable on unknown cameras, and that constraint drove most of the engineering.</p>
+      </section>
+
+      <section>
+        <div class="k">The result</div>
+        <p>Deployed and in use. Getting feedback from developers internationally through GitHub — which is also where the gesture-stability edge cases keep coming from.</p>
+      </section>
+
+      <!-- NOTE: the brief has no verbatim "what I'd do differently" for Voxel Air.
+           The two points below are synthesised strictly from Tirth's stated
+           position (gesture stability is the known cost; the demo GIF is the
+           highest-leverage asset). Confirm or replace with your own wording. -->
+      <section>
+        <div class="k">What I&rsquo;d do differently</div>
+        <p>Lead with the demo from day one — a six-second clip of a hand moving a voxel says more than any paragraph on this page. And invest earlier in gesture robustness across cheap and unusual webcams, since that&rsquo;s where every real-world bug has come from.</p>
+      </section>
+    </div>
+
+    <aside class="spec" aria-label="Project specification">
+      <div class="h">Spec</div>
+      <dl>
+        <div class="r"><dt>Role</dt><dd>Solo</dd></div>
+        <div class="r"><dt>Type</dt><dd>3D editor</dd></div>
+        <div class="r"><dt>Render</dt><dd>Three.js · WebGL</dd></div>
+        <div class="r"><dt>Tracking</dt><dd>MediaPipe</dd></div>
+        <div class="r"><dt>Lang</dt><dd>Vanilla JS</dd></div>
+        <div class="r"><dt>Deploy</dt><dd>Static · 0 backend</dd></div>
+        <div class="r"><dt>Status</dt><dd>Live · in use</dd></div>
+      </dl>
+      <div class="links">
+        <a href="https://tirth-byte.github.io/Voxel-Air/" target="_blank" rel="noopener">Open live <span class="arw" aria-hidden="true">↗</span></a>
+        <a href="https://github.com/Tirth-byte" target="_blank" rel="noopener">Repository <span class="arw" aria-hidden="true">↗</span></a>
+      </div>
+    </aside>
+
+  </div>
+
+  <nav class="projnext" aria-label="Next project">
+    <a href="https://qeist.in" target="_blank" rel="noopener">
+      <span><span class="k">Next · 02</span><span class="t">Qeist — AI QA engineer for pull requests</span></span>
+      <span class="arw" aria-hidden="true">→</span>
+    </a>
+  </nav>
+
+</main>
+
+<script src="../assets/js/main.js" defer></script>
+</body>
+</html>

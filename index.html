@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tirth Patel — AI product engineer</title>
+<meta name="description" content="I build AI tools that do one specific person's job better — Qeist reads a GitHub pull request and writes the QA checklist a test engineer would have written by hand.">
+<meta name="author" content="Tirth Patel">
+<meta name="theme-color" content="#EFEEE8">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://tirth-byte.github.io/portfolio/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tirth Patel — AI product engineer">
+<meta property="og:description" content="First-year CS student, solo founder. Voxel Air, Qeist, and a national hackathon podium — everything on the page is live.">
+<meta property="og:url" content="https://tirth-byte.github.io/portfolio/">
+<meta property="og:site_name" content="Tirth Patel">
+<meta property="og:image" content="https://tirth-byte.github.io/portfolio/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Tirth Patel — AI product engineer. Voxel Air, Qeist, everything live.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tirth Patel — AI product engineer">
+<meta name="twitter:description" content="Voxel Air, Qeist, and a national hackathon podium. Everything on the page is live.">
+<meta name="twitter:image" content="https://tirth-byte.github.io/portfolio/assets/og.png">
+<script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+<link rel="preload" href="assets/fonts/general-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/cabinet-800.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <span class="mono coord">x:00 y:00</span>
+    <span class="who"><b>tirth patel</b> / ai product engineer</span>
+    <a class="status" href="https://qeist.in" rel="noopener"><span class="dot" aria-hidden="true"></span>qeist.in · live</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero wrap">
+    <p class="kicker mono">Morbi, Gujarat · IST</p>
+
+    <h1 class="wordmark">
+      <span class="vh">Tirth Patel</span>
+      <canvas id="wordmark" aria-hidden="true"></canvas>
+      <span class="fallback name-fallback" aria-hidden="true" data-mode="static">Tirth<br>Patel</span>
+    </h1>
+
+    <p class="pitch">I build AI tools that do one specific person&rsquo;s job better.</p>
+    <p class="second">Qeist reads a GitHub pull request and writes the QA checklist a test engineer would have written by hand.</p>
+    <p class="hook">First-year CS student. Solo founder. <b>514&nbsp;commits</b> this year &mdash; and <b>everything on this page is live.</b></p>
+
+    <div class="hero-cta">
+      <a class="btn" href="https://tirth-byte.github.io/Voxel-Air/" target="_blank" rel="noopener">Use your hand — play Voxel&nbsp;Air <span class="arw" aria-hidden="true">↗</span></a>
+      <a class="btn ghost" href="projects/voxel-air.html">Read the build <span class="arw" aria-hidden="true">→</span></a>
+      <span class="hint">runs in the browser · no install · no backend</span>
+    </div>
+  </section>
+
+  <!-- ===================== WORK ===================== -->
+  <section class="section wrap" aria-labelledby="work-h">
+    <div class="sechead">
+      <h2 class="mono tag" id="work-h">Selected work</h2>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+
+    <div class="blocks">
+
+      <!-- 01 · VOXEL AIR — the hero -->
+      <article class="block lead">
+        <div class="idx"><span class="n">01 · Voxel Air</span></div>
+        <div class="lead-grid">
+          <div>
+            <h3><a class="link-stretch" href="projects/voxel-air.html">Voxel Air</a></h3>
+            <p class="sub">A 3D voxel editor you control with your hands in front of your webcam. No install, no backend.</p>
+            <p class="decision"><b>Hardest decision —</b> all hand-tracking runs client-side with MediaPipe rather than streaming frames to a server. It kept the app free to run, private by default, and deployable as static files, at the cost of making gesture detection stable on whatever webcam a stranger happens to have.</p>
+          </div>
+          <div>
+            <p class="outcome"><span class="big">Deployed &amp; in use</span> Getting feedback from developers internationally through GitHub.</p>
+            <ul class="stack" aria-label="stack">
+              <li>Three.js</li><li>WebGL</li><li>MediaPipe</li><li>Vanilla&nbsp;JS</li><li>Static deploy</li>
+            </ul>
+            <span class="gomore">Open the build <span class="arw" aria-hidden="true">→</span></span>
+          </div>
+        </div>
+      </article>
+
+      <!-- 02 · QEIST  |  03 · XINITY -->
+      <div class="pair">
+
+        <article class="block">
+          <div class="idx"><span class="n">02 · Qeist</span></div>
+          <h3><a class="link-stretch" href="https://qeist.in" target="_blank" rel="noopener">Qeist</a></h3>
+          <p class="sub">An AI QA engineer for GitHub pull requests — it reads the code changes in a PR and generates the QA checklist, so nobody writes test cases by hand.</p>
+          <p class="outcome"><span class="big">10 QA engineers interviewed</span> Every one said they&rsquo;d use it. Building v2 on what they told me was missing.</p>
+          <blockquote class="qquote">
+            &ldquo;Ten relevant test cases are better than fifty generic ones — if Qeist can do that consistently, teams will pay for it.&rdquo;
+            <cite>Senior QA Engineer, MNC · 5+ yrs · independently interviewed</cite>
+          </blockquote>
+          <ul class="stack" aria-label="stack"><li>Claude API</li><li>Next.js</li><li>Node.js</li><li>GitHub API</li></ul>
+        </article>
+
+        <article class="block">
+          <div class="idx"><span class="n">03 · Xinity outreach</span></div>
+          <h3>Xinity outreach system</h3>
+          <p class="sub">The system that fills Xinity&rsquo;s hackathons, plus the Firebase platform that runs them — registration, team coordination, live dashboard.</p>
+          <p class="outcome"><span class="big">10k+ emails · 1.2k+ WhatsApp · &#8377;0</span> Delivered without a paid service. Platform ran 3+ events including Biothon 2026, 200+ participants.</p>
+          <p class="decision">Instead of a bulk sender, I built the send system myself: one draft composed once, delivered in small batches from real accounts, so no recipient list ever looked like a campaign.</p>
+          <ul class="stack" aria-label="stack"><li>Python</li><li>Firebase</li><li>Spreadsheet ingest</li></ul>
+        </article>
+
+      </div>
+
+      <!-- Security patch — deliberately its own band, not a card -->
+      <aside class="patch">
+        <p class="lbl"><span aria-hidden="true">&#9873;</span> Security patch — Xinity event platform</p>
+        <p>Found an <b>unauthenticated Firebase API endpoint exposing full event data</b> — every registrant, every team. Patched it independently, within hours, with Firestore security rules. Nobody expects a first-year student to find this; finding it is the point.</p>
+      </aside>
+
+      <!-- 04 · VENDORBRIDGE  |  05 · SKILLMATCH -->
+      <div class="pair">
+
+        <article class="block">
+          <div class="idx"><span class="n">04 · VendorBridge</span></div>
+          <h3>VendorBridge</h3>
+          <p class="sub">A full procurement ERP — request quotes, compare them, auto-generate the purchase order, email the invoice, watch it on a dashboard.</p>
+          <p class="outcome"><span class="big">Built solo in 8 hours</span> Complete lifecycle. Seeded with 12 months of realistic data: 15 vendors, 30+ quotations, 10 POs totalling &#8377;1.6+ Cr. Odoo &times; KSV Hackathon 2026.</p>
+          <p class="decision">Enforced 4-tier role access in <b>both</b> Firestore rules and middleware — middleware alone only hides the UI; the database still answers to anyone who knows the endpoint.</p>
+          <ul class="stack" aria-label="stack"><li>Next.js</li><li>Firestore</li><li>Tailwind</li><li>Recharts</li></ul>
+        </article>
+
+        <article class="block">
+          <div class="idx"><span class="n">05 · SkillMatch</span></div>
+          <h3>SkillMatch</h3>
+          <p class="sub">A matching engine connecting people to internships, jobs and hackathons based on what they could grow into, not just what&rsquo;s already on their CV.</p>
+          <p class="outcome"><span class="big">3rd place, national</span> Out of hundreds of teams — CodeVersity @ IIT Gandhinagar.</p>
+          <p class="decision">Every job board filters on current qualifications, which locks beginners out of roles they&rsquo;d be good at. SkillMatch filters on trajectory instead.</p>
+          <ul class="stack" aria-label="stack"><li>Python</li><li>ML</li><li>Recommendation systems</li></ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== LIVE TOOL ===================== -->
+  <section class="section wrap" aria-labelledby="live-h">
+    <div class="sechead">
+      <h2 class="mono tag" id="live-h">Live · try it</h2>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <div class="prtool">
+      <h3 class="pr-h">Read a real pull request</h3>
+      <p class="pr-lead">Qeist&rsquo;s first job is to understand what a pull request actually changed. This runs that ingestion step live against the GitHub API — real data, in your browser, no backend. The AI checklist step needs a server, so it isn&rsquo;t faked here; what you get is the true change surface and where a QA pass should start.</p>
+
+      <form id="pr-form" class="pr-form" role="search">
+        <label class="vh" for="pr-input">GitHub pull request — owner/repo#number or a pull-request URL</label>
+        <input id="pr-input" class="pr-input" type="text" inputmode="url" spellcheck="false" autocapitalize="off" autocomplete="off" value="Tirth-byte/testing-testosa#3">
+        <button id="pr-btn" class="btn" type="submit">Read PR <span class="arw" aria-hidden="true">&rarr;</span></button>
+      </form>
+      <div class="pr-examples">
+        <span class="mono-lo">try one of mine —</span>
+        <button type="button" class="pr-chip" data-pr="Tirth-byte/testing-testosa#3">auth hardening</button>
+        <button type="button" class="pr-chip" data-pr="Tirth-byte/testing-testosa#4">payment logic</button>
+        <button type="button" class="pr-chip" data-pr="Tirth-byte/testing-testosa#5">API rate-limit</button>
+      </div>
+
+      <div id="pr-out" class="pr-out" aria-live="polite"><p class="pr-msg">Press <b>Read PR</b> — it calls api.github.com from your browser and reports the real change surface. Works on any public PR.</p></div>
+    </div>
+  </section>
+
+  <!-- ===================== PROOF (asymmetric, merged) ===================== -->
+  <section class="section wrap" aria-labelledby="proof-h">
+    <div class="sechead">
+      <h2 class="mono tag" id="proof-h">Proof</h2>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <div class="evidence">
+      <div class="featured">
+        <div class="fnum">3rd<span class="fsup">national</span></div>
+        <p class="flab">Open Innovation, CodeVersity @ IIT Gandhinagar — out of hundreds of teams.</p>
+      </div>
+      <ul class="ev-list">
+        <li><b>514</b> GitHub contributions in 2026, across <b>45+</b> repositories.</li>
+        <li><b>10</b> industry QA engineers interviewed — every one said they&rsquo;d use Qeist.</li>
+        <li><b>B.Tech CSE (AI &amp; ML)</b>, Marwadi University — CGPA <b>8.9</b> (Sem&nbsp;1 8.79 · Sem&nbsp;2 9.00).</li>
+        <li><b>C++ 5&#9733; Gold</b>, HackerRank · <b>SIH 2025</b> qualifier · <b>Student HackPad 2025</b> finalist.</li>
+        <li><b>Published author</b> — <i>The Truth Behind Artificial Intelligence</i>, Amazon KDP.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section class="section wrap" aria-labelledby="skills-h">
+    <div class="sechead">
+      <h2 class="mono tag" id="skills-h">Skills</h2>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <div class="skills">
+      <div class="skillrow">
+        <div class="k">Interview-ready</div>
+        <div class="v"><span>JavaScript</span><span>TypeScript</span><span>Python</span><span>C++ — HackerRank 5&#9733; Gold</span></div>
+      </div>
+      <p class="skillnote">Everything else — React, Next.js, Node.js, Firebase, Claude API, Three.js/WebGL, MediaPipe — is running in a project above, not a line on a list.</p>
+    </div>
+  </section>
+
+  <!-- ===================== EXPERIENCE ===================== -->
+  <section class="section wrap" aria-labelledby="exp-h">
+    <div class="sechead">
+      <h2 class="mono tag" id="exp-h">Experience</h2>
+      <span class="rule" aria-hidden="true"></span>
+    </div>
+    <div class="log">
+      <div class="row">
+        <div class="rl"><span class="where">Qeist</span><span class="title">Founder — solo</span></div>
+        <span class="when">2026 — present</span>
+      </div>
+      <div class="row">
+        <div class="rl"><span class="where">Xinity</span><span class="title">Summer Intern &rarr; Head of Technical Department</span></div>
+        <span class="when">May 2026 — present · promoted in 2 months</span>
+      </div>
+      <div class="row">
+        <div class="rl"><span class="where">Niora Digital Solutions</span><span class="title">Co-Founder</span></div>
+        <span class="when">2025</span>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===================== FOOTER / CONTACT ===================== -->
+<footer class="foot wrap">
+  <p class="lead">Building Qeist. If you run QA, I want to hear what your team re-tests by hand.</p>
+  <div class="contactrow">
+    <a class="big" href="mailto:kavartirth9@gmail.com">Email <span class="arw" aria-hidden="true">→</span></a>
+    <a class="big" href="https://github.com/Tirth-byte" target="_blank" rel="noopener">GitHub <span class="arw" aria-hidden="true">↗</span></a>
+    <a class="big" href="https://www.linkedin.com/in/tirth-patel-b70312373" target="_blank" rel="noopener">LinkedIn <span class="arw" aria-hidden="true">↗</span></a>
+    <a class="big" href="https://qeist.in" target="_blank" rel="noopener">qeist.in <span class="arw" aria-hidden="true">↗</span></a>
+  </div>
+  <div class="meta">
+    <span class="mono-lo">Tirth Patel · Morbi, Gujarat · IST (UTC+5:30)</span>
+    <span class="mono-lo">x:00 y:-04 · everything here is live</span>
+  </div>
+</footer>
+
+<script src="assets/js/wordmark.js" defer></script>
+<script src="assets/js/prq.js" defer></script>
+</body>
+</html>

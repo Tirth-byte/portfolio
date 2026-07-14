@@ -1,0 +1,9 @@
+.DS_Store
+node_modules/
+_site/
+*.log
+
+# private — kept local, never pushed to a public repo
+BRIEF.md
+.claude/
+shots/
