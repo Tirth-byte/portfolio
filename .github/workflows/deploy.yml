@@ -34,9 +34,9 @@ jobs:
           cp -r projects _site/
           touch _site/.nojekyll
 
+      # Pages must be enabled once in Settings → Pages → Source: GitHub Actions.
+      # (The workflow token can't create the Pages site itself.)
       - uses: actions/configure-pages@v5
-        with:
-          enablement: true      # turn on Pages (Actions build) if not already
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site
