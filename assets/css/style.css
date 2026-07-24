@@ -355,6 +355,51 @@ a.block:hover .gomore .arw{transform:translateX(4px)}
   .pager a.next{text-align:left;padding:clamp(1.25rem,4vw,1.75rem) 0}
 }
 
+/* ===================== DARK MODE ===================== */
+[data-theme="dark"]{
+  --paper:#161618;
+  --paper-2:#1E1F22;
+  --ink:#E8E6E3;
+  --mute:#8B8D92;
+  --vox-top:#2A2B2E;
+  --vox-mid:#35363A;
+  --vox-low:#44464A;
+  --signal:#F0B330;
+  --inset:#0A0A0C;
+  --live:#FF5470;
+  --live-ink:#FF6B85;
+  --line:rgba(232,230,227,.12);
+  --line-faint:rgba(232,230,227,.06);
+}
+
+/* ---------- theme toggle ---------- */
+.theme-toggle{
+  margin-left:auto;margin-right:.75rem;
+  display:flex;align-items:center;justify-content:center;
+  width:36px;height:36px;
+  background:transparent;
+  border:1.5px solid var(--line);border-radius:50%;
+  cursor:pointer;flex-shrink:0;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s;
+  color:var(--mute)
+}
+.theme-toggle:hover{transform:scale(1.12);border-color:var(--signal);color:var(--ink)}
+.theme-toggle:active{transform:scale(.88)}
+.theme-toggle svg{width:18px;height:18px;display:block}
+.theme-toggle .icon-sun{display:none}
+[data-theme="dark"] .theme-toggle .icon-moon{display:none}
+[data-theme="dark"] .theme-toggle .icon-sun{display:block}
+@media (max-width:560px){.theme-toggle{margin-right:0}}
+
+.theme-overlay{will-change:clip-path}
+
+/* ==================== SCROLL REVEAL ==================== */
+[data-reveal]{
+  opacity:0;transform:translateY(18px);
+  transition:opacity .6s cubic-bezier(.25,.46,.45,.94),transform .6s cubic-bezier(.25,.46,.45,.94)
+}
+[data-reveal].revealed{opacity:1;transform:translateY(0)}
+
 /* ---------- motion floor ---------- */
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}

@@ -45,6 +45,8 @@
 }
 </script>
 <script>document.documentElement.className = document.documentElement.className.replace("no-js","js");</script>
+<script>(function(){try{var t=localStorage.getItem("portfolio-theme");if(!t&&window.matchMedia("(prefers-color-scheme:dark)").matches)t="dark";if(t==="dark")document.documentElement.setAttribute("data-theme","dark")}catch(e){}})()</script>
+<script src="assets/js/theme.js" defer></script>
 <link rel="preload" href="assets/fonts/general-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/cabinet-800.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
@@ -62,7 +64,7 @@
 <main id="main">
 
   <!-- ===================== HERO ===================== -->
-  <section class="hero wrap">
+  <section class="hero wrap" data-reveal>
     <p class="kicker mono">Morbi, Gujarat · IST</p>
 
     <h1 class="wordmark" aria-label="Tirth Patel">
@@ -82,7 +84,7 @@
   </section>
 
   <!-- ===================== WORK ===================== -->
-  <section class="section wrap" aria-labelledby="work-h">
+  <section class="section wrap" aria-labelledby="work-h" data-reveal>
     <div class="sechead">
       <h2 class="mono tag" id="work-h">Selected work</h2>
       <span class="rule" aria-hidden="true"></span>
@@ -167,7 +169,7 @@
   </section>
 
   <!-- ===================== LIVE TOOL ===================== -->
-  <section class="section wrap" aria-labelledby="live-h">
+  <section class="section wrap" aria-labelledby="live-h" data-reveal>
     <div class="sechead">
       <h2 class="mono tag" id="live-h">Live · try it</h2>
       <span class="rule" aria-hidden="true"></span>
@@ -193,7 +195,7 @@
   </section>
 
   <!-- ===================== PROOF (asymmetric, merged) ===================== -->
-  <section class="section wrap" aria-labelledby="proof-h">
+  <section class="section wrap" aria-labelledby="proof-h" data-reveal>
     <div class="sechead">
       <h2 class="mono tag" id="proof-h">Proof</h2>
       <span class="rule" aria-hidden="true"></span>
@@ -214,7 +216,7 @@
   </section>
 
   <!-- ===================== SKILLS ===================== -->
-  <section class="section wrap" aria-labelledby="skills-h">
+  <section class="section wrap" aria-labelledby="skills-h" data-reveal>
     <div class="sechead">
       <h2 class="mono tag" id="skills-h">Skills</h2>
       <span class="rule" aria-hidden="true"></span>
@@ -229,7 +231,7 @@
   </section>
 
   <!-- ===================== EXPERIENCE ===================== -->
-  <section class="section wrap" aria-labelledby="exp-h">
+  <section class="section wrap" aria-labelledby="exp-h" data-reveal>
     <div class="sechead">
       <h2 class="mono tag" id="exp-h">Experience</h2>
       <span class="rule" aria-hidden="true"></span>
@@ -253,7 +255,7 @@
 </main>
 
 <!-- ===================== FOOTER / CONTACT ===================== -->
-<footer class="foot wrap">
+<footer class="foot wrap" data-reveal>
   <p class="lead">Building Qeist. If you run QA, I want to hear what your team re-tests by hand.</p>
   <div class="contactrow">
     <a class="big" href="mailto:kavartirth9@gmail.com">Email <span class="arw" aria-hidden="true">→</span></a>
