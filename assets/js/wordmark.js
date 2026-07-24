@@ -47,11 +47,33 @@
   cells.forEach(function (p) { p.ord = p.x + p.y; });
   var maxOrd = 0; cells.forEach(function (p) { maxOrd = Math.max(maxOrd, p.ord); });
 
-  // The wordmark is rendered in INK, not gold: near-black front face, warmer-dark
-  // top face, darkest right face, with a faint warm rim (not the accent) so the
-  // cubes still read as catching a little light. Keeping gold off the name lets
-  // the accent stay meaningful everywhere else on the page.
-  var VOX_TOP = "#1A1918", VOX_MID = "#312E28", VOX_LOW = "#0E0D0B", SIGNAL = "#4A463D", PAPER = "#EFEEE8";
+  // Palette — updated when theme changes
+  var VOX_TOP, VOX_MID, VOX_LOW, SIGNAL, PAPER;
+
+  var LIGHT = { VOX_TOP:"#1A1918", VOX_MID:"#312E28", VOX_LOW:"#0E0D0B", SIGNAL:"#4A463D", PAPER:"#EFEEE8" };
+  var DARK  = { VOX_TOP:"#F0EDE8", VOX_MID:"#C5C2BC", VOX_LOW:"#9A9791", SIGNAL:"#F0B330", PAPER:"#161618" };
+
+  function setPalette(theme) {
+    var p = theme === "dark" ? DARK : LIGHT;
+    VOX_TOP  = p.VOX_TOP;
+    VOX_MID  = p.VOX_MID;
+    VOX_LOW  = p.VOX_LOW;
+    SIGNAL   = p.SIGNAL;
+    PAPER    = p.PAPER;
+  }
+
+  setPalette(document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light");
+
+  // Re-render final frame when theme changes
+  var themeWatcher = new MutationObserver(function (muts) {
+    muts.forEach(function (m) {
+      if (m.attributeName === "data-theme") {
+        setPalette(m.target.getAttribute("data-theme") === "dark" ? "dark" : "light");
+        if (started) { layout(); render(1); }
+      }
+    });
+  });
+  themeWatcher.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
   var dpr = Math.max(1, Math.min(window.devicePixelRatio || 1, 2));
   var cell = 0, ox = 0, oy = 0, depth = 0;
 

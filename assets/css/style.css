@@ -372,6 +372,28 @@ a.block:hover .gomore .arw{transform:translateX(4px)}
   --line-faint:rgba(232,230,227,.06);
 }
 
+/* ---------- name glow in dark mode ---------- */
+[data-theme="dark"] .name-fallback{
+  color:#FFFFFF;
+  text-shadow:0 0 30px rgba(240,179,48,.25),0 0 80px rgba(240,179,48,.08)
+}
+@media (prefers-reduced-motion:no-preference){
+  [data-theme="dark"] .wordmark{
+    animation:namePulse 4s ease-in-out infinite
+  }
+  [data-theme="dark"] .name-fallback{
+    animation:nameGlow 4s ease-in-out infinite
+  }
+}
+@keyframes namePulse{
+  0%,100%{filter:brightness(1)}
+  50%{filter:brightness(1.06)}
+}
+@keyframes nameGlow{
+  0%,100%{text-shadow:0 0 30px rgba(240,179,48,.25),0 0 80px rgba(240,179,48,.08)}
+  50%{text-shadow:0 0 50px rgba(240,179,48,.45),0 0 100px rgba(240,179,48,.15)}
+}
+
 /* ---------- theme toggle ---------- */
 .theme-toggle{
   margin-left:auto;margin-right:.75rem;
