@@ -17,6 +17,17 @@
     localStorage.setItem(storageKey,t);
     var m=document.querySelector('meta[name="theme-color"]');
     if(m)m.content=t==="dark"?"#161618":"#EFEEE8";
+    triggerNameGlow(t);
+  }
+
+  function triggerNameGlow(t){
+    if(t!=="dark")return;
+    var wm=document.querySelector(".wordmark");
+    if(!wm)return;
+    wm.classList.remove("name-glow");
+    void wm.offsetWidth;
+    wm.classList.add("name-glow");
+    wm.addEventListener("animationend",function f(){wm.classList.remove("name-glow");wm.removeEventListener("animationend",f)});
   }
 
   var toggle=document.createElement("button");

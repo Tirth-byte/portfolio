@@ -384,6 +384,9 @@ a.block:hover .gomore .arw{transform:translateX(4px)}
   [data-theme="dark"] .name-fallback{
     animation:nameGlow 4s ease-in-out infinite
   }
+  .wordmark.name-glow{
+    animation:nameEntrance 1s cubic-bezier(.34,1.56,.64,1) forwards
+  }
 }
 @keyframes namePulse{
   0%,100%{filter:brightness(1)}
@@ -392,6 +395,10 @@ a.block:hover .gomore .arw{transform:translateX(4px)}
 @keyframes nameGlow{
   0%,100%{text-shadow:0 0 30px rgba(240,179,48,.25),0 0 80px rgba(240,179,48,.08)}
   50%{text-shadow:0 0 50px rgba(240,179,48,.45),0 0 100px rgba(240,179,48,.15)}
+}
+@keyframes nameEntrance{
+  0%{filter:brightness(1.6) drop-shadow(0 0 30px rgba(240,179,48,.6))}
+  100%{filter:brightness(1) drop-shadow(0 0 0 transparent)}
 }
 
 /* ---------- theme toggle ---------- */
