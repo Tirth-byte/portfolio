@@ -397,8 +397,9 @@ a.block:hover .gomore .arw{transform:translateX(4px)}
   50%{text-shadow:0 0 50px rgba(240,179,48,.45),0 0 100px rgba(240,179,48,.15)}
 }
 @keyframes nameEntrance{
-  0%{filter:brightness(1.6) drop-shadow(0 0 30px rgba(240,179,48,.6))}
-  100%{filter:brightness(1) drop-shadow(0 0 0 transparent)}
+  0%{filter:brightness(2.5)}
+  50%{filter:brightness(1.4)}
+  100%{filter:brightness(1)}
 }
 
 /* ---------- theme toggle ---------- */
